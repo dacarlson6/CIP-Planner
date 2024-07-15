@@ -81,13 +81,26 @@ view.ui.add(searchWidget, {
   index: 2
 });
 
-// LayerList widget
+// Create a LayerList widget, and utilze the ListItemCreatedFunction to customize the legend content
+// See https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList-ListItemPanel.html for more details
 const layerList = new LayerList({
   view: view,
-  container: document.createElement("div")
+  container: document.createElement("div"),
+  listItemCreatedFunction: function(event) {
+    const item = event.item;
+    item.panel = {
+      content: "legend",
+      open: false
+    };
+  }
 });
 
-view.ui.add(layerList, "bottom-right");
+view.ui.add(layerList, "bottom-left");
+
+document.getElementById('toggle-query-button').addEventListener('click', function() {
+  const queryForm = document.getElementById('queryForm');
+  queryForm.classList.toggle('hidden');
+});
 
 // Handle road query form submission
 document.getElementById('road-query-form').addEventListener('submit', function(event) {
@@ -115,6 +128,11 @@ document.getElementById('watermain-query-form').addEventListener('submit', funct
     roadLayer.definitionExpression = null;
     watermainLayer.definitionExpression = null;
     console.log("Queries reset");
+
+    // Reset the form inputs
+    document.getElementById('watermain-query-form').reset();
+    // Reset the form inputs
+    document.getElementById('road-query-form').reset();
   });
 
 });
