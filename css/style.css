@@ -70,10 +70,39 @@ body,
 .toggle-query-button:hover {
     background-color: #005f91;
 }
+
+/* New styles for submit buttons */
+.query-form button[type="submit"] {
+    background-color: #28a745; /* Green color */
+    text-transform: uppercase;
+    font-weight: bold;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 100%;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.query-form button[type="submit"]:hover {
+    background-color: #218838;
+}
+
+/* New styles for reset button */
 .reset-button {
     display: block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    font-size: 16px;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 20px auto; /* Center the button so it stands out more to the user */
+    background-color: gray;
+    color: white;
+    border: none;
+    padding: 10px;
     cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.reset-button:hover {
+    background-color: #c82333;
 }
