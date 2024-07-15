@@ -90,12 +90,12 @@ const layerList = new LayerList({
     const item = event.item;
     item.panel = {
       content: "legend",
-      open: true
+      open: false
     };
   }
 });
 
-view.ui.add(layerList, "bottom-right");
+view.ui.add(layerList, "bottom-left");
 
 document.getElementById('toggle-query-button').addEventListener('click', function() {
   const queryForm = document.getElementById('queryForm');
