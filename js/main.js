@@ -128,6 +128,11 @@ document.getElementById('watermain-query-form').addEventListener('submit', funct
     roadLayer.definitionExpression = null;
     watermainLayer.definitionExpression = null;
     console.log("Queries reset");
+
+    // Reset the form inputs
+    document.getElementById('watermain-query-form').reset();
+    // Reset the form inputs
+    document.getElementById('road-query-form').reset();
   });
 
 });
