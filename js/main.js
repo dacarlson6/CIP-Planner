@@ -89,6 +89,11 @@ const layerList = new LayerList({
 
 view.ui.add(layerList, "bottom-right");
 
+document.getElementById('toggle-query-button').addEventListener('click', function() {
+  const queryForm = document.getElementById('queryForm');
+  queryForm.classList.toggle('hidden');
+});
+
 // Handle road query form submission
 document.getElementById('road-query-form').addEventListener('submit', function(event) {
   event.preventDefault(); // Prevent form submission and page reload

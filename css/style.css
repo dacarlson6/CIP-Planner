@@ -38,6 +38,7 @@ body,
     cursor: pointer;
 }
 .query-form {
+    display: block; /* Show by default */
     background-color: white;
     padding: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
@@ -46,6 +47,28 @@ body,
     right: 10px;
     z-index: 99;
     max-width: 300px;
+}
+
+.query-form.hidden {
+  display: none; /* Hide when the hidden class is applied */
+}
+
+/* Styles for toggle query button */
+.toggle-query-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    z-index: 100;
+    background-color: #0079c1;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.toggle-query-button:hover {
+    background-color: #005f91;
 }
 .reset-button {
     display: block;
