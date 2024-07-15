@@ -81,10 +81,18 @@ view.ui.add(searchWidget, {
   index: 2
 });
 
-// LayerList widget
+// Create a LayerList widget, and utilze the ListItemCreatedFunction to customize the legend content
+// See https://developers.arcgis.com/javascript/latest/api-reference/esri-widgets-LayerList-ListItemPanel.html for more details
 const layerList = new LayerList({
   view: view,
-  container: document.createElement("div")
+  container: document.createElement("div"),
+  listItemCreatedFunction: function(event) {
+    const item = event.item;
+    item.panel = {
+      content: "legend",
+      open: true
+    };
+  }
 });
 
 view.ui.add(layerList, "bottom-right");
